@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Food Recipe</title>
+</head>
+<body>
+    <div class="header">
+        <nav class="nav-bar">
+            <img src="images/logo.png" class="brand-name">
+            <a href="#" class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </a>
+            <div class="menu-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="title">Find Your Favourite Recipe</div>
+        <div class="search-wrapper">
+            <div class="fa fa-search"></div>
+            <input type="text" name=""  id="search" placeholder="What do you want to eat?" onkeyup="search()">
+            <div class="fa fa-times" onclick="clearInput()" ></div>
+        </div>
+    </div>
+    <div class="result">
+        <h1>Your Search Result: </h1>
+    </div>
+    <div class="card-grid" >
+        <div class="food-list" id="food-list">
+            <p id="none" style="display: none;">Sorry, the food you were looking for was not available.</p>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Scramble Egg on Toast.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Scrambled Eggs with Toast </h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get1stRecipeDetails()">Get Recipe</button>
+                </div>
+            </div>
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Yogurt Parfait.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Yogurt Parfait</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get2ndRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Banana Pancake.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Banana Pancakes</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get3rdRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Cereal with Milk and Berries.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Cereal with Milk and Berries</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get4thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Veggie Omelette.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Veggie Omelette</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get5thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                        <img src="images/Avocado Toast.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Avocado Toast</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get6thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Fruit Smoothie.jpg">
+                </div>
+                <div class="card-body" >
+                    <h3>Fruit Smoothie</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get7thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class="card card-shadow">
+                <div class="card-header card-image">
+                    <img src="images/Breakfast Burrito.jpeg">
+                </div>
+                <div class="card-body" >
+                    <h3>Breakfast Burrito</h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn" onclick="get8thRecipe()">Get Recipe</button>
+                </div>
+            </div>
+    
+            <div class = "first-meal-detail" id="first-meal-detail">
+                <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                    <i class ="fas fa-times"></i>
+                </button>
+                <div class="meal-content">
+                    <h2 class="meal-name">Scrambled Eggs with Toast</h2>
+                    <div class="meal-about">
+                        <h3 class="meal-title-about">About Meal</h3>
+                        <p class="meal-descript-about">Classic scrambled eggs cooked to perfection, seasoned with salt and pepper, and served alongside toasted bread slices with a spread of butter. </p>
+                    </div>
+                    <div class = "meal-instruct">
+                        <h3>Ingredients:</h3>
+                        <p>
+                            <br>Eggs x 2
+                            <br>Salt and pepper
+                            <br>Bread slices x 2
+                            <br>Butter
+                        </p>
+                        <h3>Instruction:</h3>
+                        <p>
+                            <br>1. Crack the eggs into a bowl, season with salt and pepper, and whisk well.
+                            <br>2. Heat a non-stick pan over medium heat and add a knob of butter.
+                            <br>3. Pour the beaten eggs into the pan and stir gently until they are cooked to your desired consistency.
+                            <br>4. Toast the bread slices and spread some butter on them.
+                            <br>5. Serve the scrambled eggs with toast. 
+                        </p>
+                    </div>
+                <div class = "meal-img">
+                    <img src = "images/Scramble Egg on Toast.jpeg" alt = "">
+                </div>
+                <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=Zouy8M6R1Cs" class="meal-link-btn">Watch Video</a>
+                </div>
+            </div>
+        </div>
+    
+        <div class = "second-meal-detail" id="second-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Yogurt Parfait</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">A delightful combination of creamy Greek yogurt, crunchy granola, and fresh berries layered beautifully in a glass or bowl, creating a refreshing and nutritious breakfast. </p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Greek yogurt
+                        <br>Granola
+                        <br>Fresh berries (e.g., strawberries, blueberries)
+                        <br>Honey (optional)
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. In a glass or bowl, layer Greek yogurt, granola, and fresh berries.
+                        <br>2. Repeat the layers until you use up all the ingredients.
+                        <br>3. Drizzle honey over the top if desired.
+                        <br>4. Serve the yogurt parfait chilled.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Yogurt Parfait.jpeg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=8jwFwVHTgZc" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div> 
+    
+        <div class = "third-meal-detail" id="third-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Banana Pancakes</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">Fluffy pancakes infused with the natural sweetness of ripe bananas, cooked until golden brown, and served with a drizzle of maple syrup or additional sliced bananas.</p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Pancake mix
+                        <br>Milk
+                        <br>Ripe bananas x 2
+                        <br>Butter or cooking spray
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. In a bowl, prepare the pancake mix according to package instructions, substituting part of the milk with the mashed bananas.
+                        <br>2. Heat a non-stick skillet or griddle over medium heat and grease it with butter or cooking spray.
+                        <br>3. Pour small amounts of the pancake batter onto the skillet and cook until bubbles form on the surface.
+                        <br>4. Flip the pancakes and cook for another minute or until golden brown.
+                        <br>5. Serve the banana pancakes with maple syrup or additional sliced bananas.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Banana Pancake.jpeg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=kY-d4rRPcUk" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div>  
+    
+        <div class = "four-meal-detail" id="four-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Cereal with Milk and Berries</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">A classic breakfast choice consisting of your favorite breakfast cereal submerged in cold milk and enhanced with the vibrant addition of fresh berries, creating a balanced and colorful meal. 
+                    </p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Breakfast cereal of your choice
+                        <br>Milk 
+                        <br>Fresh berries (e.g., raspberries, blackberries)
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. Pour the desired amount of cereal into a bowl.
+                        <br>2. Add milk to the cereal, enough to cover it.
+                        <br>3. Top with fresh berries.
+                        <br>4. Allow the cereal to sit for a minute or two to soften slightly.
+                        <br>5. Enjoy the cereal with milk and berries.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Cereal with Milk and Berries.jpeg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=ExvYZx5-4Co" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div>  
+    
+        <div class = "five-meal-detail" id="five-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Veggie Omelette</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">A healthy and filling omelette packed with a medley of sautéed vegetables, prepared with eggs and optional melted cheese, making it a savory and satisfying breakfast choice.
+                    </p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Eggs x 2
+                        <br>Salt and pepper
+                        <br>Chopped vegetables (e.g., bell peppers, onions, spinach)
+                        <br>Shredded cheese (optional)
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. Crack the eggs into a bowl, season with salt and pepper, and whisk well.
+                        <br>2. Heat a non-stick pan over medium heat and add a little cooking oil or butter.
+                        <br>3. Add the chopped vegetables to the pan and sauté until they are tender.
+                        <br>4. Pour the beaten eggs over the vegetables and cook until the omelette is set.
+                        <br>5. If desired, sprinkle shredded cheese over one half of the omelette and fold it in half.
+                        <br>6. Serve the veggie omelette hot.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Veggie Omelette.jpeg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=musZ31HURws" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div> 
+    
+        <div class = "six-meal-detail" id="six-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Avocado Toast</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">A trendy and nourishing breakfast option featuring perfectly toasted bread topped with mashed ripe avocado, a splash of lemon juice, and a sprinkle of salt, pepper, and optional red pepper flakes.
+                    </p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Bread slices
+                        <br>Ripe avocado
+                        <br>Lemon juice
+                        <br>Salt and pepper
+                        <br>Red pepper flakes (optional)
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. Toast the bread slices until golden brown.
+                        <br>2. Cut the avocado in half, remove the pit, and scoop out the flesh into a bowl.
+                        <br>3. Mash the avocado with a fork and add a squeeze of lemon juice, salt, and pepper to taste.
+                        <br>4. Spread the avocado mixture on the toasted bread.
+                        <br>5. Sprinkle with red pepper flakes if desired.
+                        <br>6. Serve the avocado toast immediately.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Avocado Toast.jpeg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=Rh4EI4luKAQ" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div> 
+    
+        <div class = "seven-meal-detail" id="seven-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Fruit Smoothie</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">A refreshing blend of fresh or frozen fruits and creamy yogurt or milk, blended to smooth perfection, resulting in a delightful and energizing morning drink.
+                    </p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Fresh or frozen fruits (e.g., bananas, berries, mangoes)
+                        <br>Yogurt or milk
+                        <br>Honey (optional) 
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. In a blender, combine the fruits, yogurt or milk, and honey if desired.
+                        <br>2. Blend until smooth and creamy.
+                        <br>3. Taste and adjust the sweetness if necessary by adding more honey.
+                        <br>4. Pour the fruit smoothie into glasses and serve chilled.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Fruit Smoothie.jpg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=YuDhbLQtt2k" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div> 
+    
+        <div class = "eight-meal-detail" id="eight-meal-detail">
+            <button type = "button" class = "btn recipe-close-btn" id = "recipe-close-btn" onclick="closeBtn()">
+                <i class ="fas fa-times"></i>
+            </button>
+            <div class="meal-content">
+                <h2 class="meal-name">Breakfast Burrito</h2>
+                <div class="meal-about">
+                    <h3 class="meal-title-about">About Meal</h3>
+                    <p class="meal-descript-about">A satisfying and portable breakfast wrap filled with scrambled eggs, sautéed vegetables, and shredded cheese, all wrapped up in a warm tortilla, perfect for a hearty and on-the-go morning meal.
+                    </p>
+                </div>
+                <div class = "meal-instruct">
+                    <h3>Ingredients:</h3>
+                    <p>
+                        <br>Tortillas
+                        <br>Eggs x 2
+                        <br>Salt and pepper
+                        <br>Chopped vegetables (e.g., bell peppers, onions, tomatoes)
+                        <br>Shredded cheese
+                        <br>Salsa or hot sauce (optional)
+                    </p>
+                    <h3>Instruction:</h3>
+                    <p>
+                        <br>1. Crack the eggs into a bowl, season with salt and pepper, and whisk well.
+                        <br>2. In a skillet, sauté the chopped vegetables until tender.
+                        <br>3. Pour the beaten eggs into the skillet and scramble them with the vegetables.
+                        <br>4. Warm the tortillas in a dry skillet or microwave.
+                        <br>5. Spoon the scrambled eggs and vegetables onto each tortilla and sprinkle with shredded cheese.
+                        <br>6. Roll up the tortillas to form burritos.
+                        <br>7. Serve the breakfast burritos with salsa or hot sauce if desired.
+                    </p>
+                </div>
+                <div class = "meal-img">
+                    <img src = "images/Breakfast Burrito.jpeg" alt = "">
+                  </div>
+                  <div class = "meal-link">
+                    <a href="https://www.youtube.com/watch?v=P-cseza8K0I" class="meal-link-btn" >Watch Video</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+    
+
+<div class="footer">
+    <div class="quick-bar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</div>
+
+<script src="js/index.js"></script>
+</body>
+</html>
+                
+        
+        
